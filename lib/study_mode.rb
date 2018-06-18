@@ -1,4 +1,5 @@
 require "study_mode/version"
+require "study_mode/site_blocker"
 require "paint"
 
 module StudyMode
@@ -13,5 +14,7 @@ module StudyMode
   "
   def self.init
     Paint[STUDY, "f92ade"]
+    puts "blocking sites.."
+    StudyMode::SiteBlocker.new.block
   end
 end
